@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(callmethod)
+```
+# callmethod
+
+> A methods package with some simpler syntax at the cost of being a less transferable
+
+## Installation
+
+You can install the released version of callmethod from Github with:
+
+``` r
+## install from Github
+remotes::install_github("mkearney/callmethod")
+```
+
+## Example
+
+A basic example of defining and using a method
+
+```{r example}
+## define method
+r_norm <- function(n, m = 0, sd = 1) call_method("r_norm")
+
+## set default
+r_norm.default <- function(...) rnorm(...)
+
+## call method
+r_norm(10, 3)
+```
